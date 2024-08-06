@@ -15,7 +15,7 @@
           <v-avatar
             color="grey"
             rounded="0"
-            size="250"
+            size="300"
           >
           <v-img :src="profile" cover />
           </v-avatar>
@@ -67,7 +67,7 @@
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-gap: 50px;
   min-height: 90vh;
 
@@ -126,17 +126,18 @@
   }
 
 
-  .item:first-child {
+  .item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
     grid-column: 1/3;
     grid-row: 1/3;
   }
 
-  $colors: (blue, green,  CornflowerBlue);
+  $colors: (blue, green,  CornflowerBlue, orange);
 
-  @for $i from 1 through 3 {
+  @for $i from 1 through 4 {
     .item#{$i} {
       &.card:hover,
       &.card:focus {
@@ -146,52 +147,52 @@
     }
   }
 
-  .item2 {
+  .item1 {
     grid-column: 3/5;
     grid-row: 1/2;
   }
 
-  .item3 {
+  .item2 {
     grid-column: 5/6;
     grid-row: 1/2;
   }
 
-  .item4 {
+  .item3 {
     grid-column: 3/4;
     grid-row: 2/3;
   }
 
-  .item5 {
+  .item4 {
     grid-column: 4/5;
+    grid-row: 2/3;
+  }
+
+  .item5 {
+    grid-column: 5/6;
     grid-row: 2/3;
   }
 
   .item6 {
-    grid-column: 5/6;
-    grid-row: 2/3;
-  }
-
-  .item7 {
     grid-column: 2/4;
     grid-row: 3/4;
   }
 
-  .item8 {
+  .item7 {
     grid-column: 4/5;
     grid-row: 3/5;
   }
 
-  .item9 {
+  .item8 {
     grid-column: 5/6;
     grid-row: 3/4;
   }
 
-  .item10 {
+  .item9 {
     grid-column: 5/6;
     grid-row: 4/5;
   }
 
-  .item11 {
+  .item10 {
     grid-column: 2/3;
     grid-row: 4/5;
   }
@@ -242,60 +243,60 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
 
-    .item1 {
+    .item {
       grid-column: 1/4;
       grid-row: 1/3;
     }
 
-    .item2 {
+    .item1 {
       grid-column: 4/6;
       grid-row: 1/2;
     }
 
-    .item3 {
+    .item2 {
       grid-column: 4/5;
       grid-row: 2/3;
     }
 
-    .item4 {
+    .item3 {
       grid-column: 5/6;
       grid-row: 2/4;
     }
 
-    .item5 {
+    .item4 {
       grid-column: 2/5;
       grid-row: 3/4;
     }
 
-    .item6 {
+    .item5 {
       grid-column:5/6;
       grid-row: 4/5;
     }
 
-    .item7 {
+    .item6 {
       grid-column: 2/4;
       grid-row: 4/5;
     }
 
-    .item8 {
+    .item7 {
       grid-column: 4/5;
       grid-row: 4/5;
     }
 
-    .item9 {
+    .item8 {
       grid-column: 1/2;
       grid-row: 5/6;
     }
 
-    .item10 {
+    .item9 {
       grid-column: 2/5;
       grid-row: 5/6;
     }
 
-    .item11 {
+    .item10 {
       grid-column: 5/6;
       grid-row: 5/6;
     }
@@ -306,60 +307,60 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 20px;
 
-    .item1 {
+    .item {
       grid-column: 1/7;
       grid-row: 1/2;
     }
 
-    .item2 {
+    .item1 {
       grid-column: 1/3;
       grid-row: 2/3;
     }
 
-    .item3 {
+    .item2 {
       grid-column: 4/7;
       grid-row: 2/3;
     }
 
-    .item4 {
+    .item3 {
       grid-column: 1/5;
       grid-row: 3/4;
     }
 
-    .item5 {
+    .item4 {
       grid-column: 2/6;
       grid-row: 4/5;
     }
 
-    .item6 {
+    .item5 {
       grid-column: 1/3;
       grid-row: 5/6;
     }
 
-    .item7 {
+    .item6 {
       grid-column: 3/7;
       grid-row: 5/7;
     }
 
-    .item8 {
+    .item7 {
       grid-column: 2/5;
       grid-row: 7/8;
     }
 
-    .item9 {
+    .item8 {
       grid-column: 1/3;
       grid-row: 8/10;
     }
 
-    .item10 {
+    .item9 {
       grid-column: 3/7;
       grid-row: 8/9;
     }
 
-    .item11 {
+    .item10 {
       grid-column: 3/5;
       grid-row: 9/11;
     }
@@ -370,60 +371,60 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
 
-    .item1 {
+    .item {
       grid-column: 1/5;
       grid-row: 1/2;
     }
 
-    .item2 {
+    .item1 {
       grid-column: 1/3;
       grid-row: 2/3;
     }
 
-    .item3 {
+    .item2 {
       grid-column: 3/5;
       grid-row: 2/4;
     }
 
-    .item4 {
+    .item3 {
       grid-column: 1/3;
       grid-row: 3/4;
     }
 
-    .item5 {
+    .item4 {
       grid-column: 1/3;
       grid-row: 4/6;
     }
 
-    .item6 {
+    .item5 {
       grid-column: 3/5;
       grid-row: 4/5;
     }
 
-    .item7 {
+    .item6 {
       grid-column: 3/5;
       grid-row: 5/6;
     }
 
-    .item8 {
+    .item7 {
       grid-column: 3/5;
       grid-row: 6/8;
     }
 
-    .item9 {
+    .item8 {
       grid-column: 1/3;
       grid-row: 6/7;
     }
 
-    .item10 {
+    .item9 {
       grid-column: 1/3;
       grid-row: 7/8;
     }
 
-    .item11 {
+    .item10 {
       grid-column: 1/4;
       grid-row: 8/9;
     }
@@ -432,14 +433,12 @@
 }
 @media only screen and (max-width: 500px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 
-    .item1 {
-      grid-column: 1/5;
-      grid-row: 1/2;
+    .item {
+      align-items: center;
 
       h1 {
         font-size: 2.2rem;
@@ -450,55 +449,6 @@
       }
     }
 
-    .item2 {
-      grid-column: 1/3;
-      grid-row: 2/3;
-    }
-
-    .item3 {
-      grid-column: 3/5;
-      grid-row: 2/3;
-    }
-
-    .item4 {
-      grid-column: 1/5;
-      grid-row: 3/4;
-    }
-
-    .item5 {
-      grid-column: 1/3;
-      grid-row: 4/5;
-    }
-
-    .item6 {
-      grid-column: 3/5;
-      grid-row: 4/5;
-    }
-
-    .item7 {
-      grid-column: 1/5;
-      grid-row: 5/6;
-    }
-
-    .item8 {
-      grid-column: 1/5;
-      grid-row: 7/8;
-    }
-
-    .item9 {
-      grid-column: 1/3;
-      grid-row: 6/7;
-    }
-
-    .item10 {
-      grid-column: 3/5;
-      grid-row: 6/7;
-    }
-
-    .item11 {
-      grid-column: 1/4;
-      grid-row: 8/9;
-    }
 
   }
 }
