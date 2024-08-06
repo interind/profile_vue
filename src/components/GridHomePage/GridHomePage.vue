@@ -1,48 +1,23 @@
 <template>
   <section class="grid">
     <div class="content item">
-      <v-card
-        max-width="300"
-        rounded="0"
-      >
-        <v-img
-          height="100%"
-          :src="bg"
-          position="bottom"
-          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-          cover
-        >
-          <v-avatar
-            color="grey"
-            rounded="0"
-            size="300"
-          >
-          <v-img :src="profile" cover />
+      <v-card max-width="300" rounded="0">
+        <v-img height="100%" :src="bg" position="bottom"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" cover>
+          <v-avatar color="grey" rounded="0" size="300">
+            <v-img :src="profile" cover />
           </v-avatar>
-          <v-list-item
-            class="text-white"
-            :title="info.lastName"
-            :subtitle="info.firstName"
-          />
+          <v-list-item class="text-white" :title="info.lastName" :subtitle="info.firstName" />
         </v-img>
       </v-card>
-      <h1>{{ info.work }}</h1>
-    </div>
-    <div
-      v-for="([key, value], index) in Object.entries(info.technologies)"
-      :key="key"
-      :class="`card item${index + 1}`"
-    >
-      <v-list density="comfortable" variant="text" bgColor="transparent">
-        <v-list-subheader :style="{textTransform: 'capitalize' }">{{ key }}</v-list-subheader>
+      <h1 :class="$vuetify.display.mobile ? 'text-h3' : 'text-h1'">{{ info.work }}</h1>
 
-        <v-list-item
-          v-for="(item, i) in value"
-          :key="i"
-          :value="item"
-          color="primary"
-          disabled
-        >
+    </div>
+    <div v-for="([key, value], index) in Object.entries(info.technologies)" :key="key" :class="`card item${index + 1}`">
+      <v-list density="comfortable" variant="text" bgColor="transparent">
+        <v-list-subheader :style="{ textTransform: 'capitalize' }">{{ key }}</v-list-subheader>
+        <v-divider inset></v-divider>
+        <v-list-item v-for="(item, i) in value" :key="i" :value="item" color="primary" :href="item.href" target="__blank">
           <template v-slot:prepend>
             <v-icon :icon="`mdi-${item.icon}`"></v-icon>
           </template>
@@ -55,9 +30,9 @@
 </template>
 
 <script setup>
-  import info from '../../data/home';
-  import profile from '@/assets/img/profile.jpg';
-  import bg from '@/assets/img/bg.jpg';
+import info from '../../data/home';
+import profile from '@/assets/img/profile.jpg';
+import bg from '@/assets/img/bg.jpg';
 </script>
 
 <style lang="scss" scoped>
@@ -78,7 +53,7 @@
     color: #fff;
     background: #d81313be;
     opacity: 1;
-    transform: scale(.95) rotateZ(-2deg);
+    transform: scale(.98) rotateZ(-1deg);
     cursor: pointer;
 
     &:after {
@@ -135,97 +110,104 @@
     grid-row: 1/3;
   }
 
-  $colors: (blue, green,  CornflowerBlue, orange);
+  $colors: (
+    DarkSlateBlue,
+    DarkGreen,
+    CornflowerBlue,
+    DarkSalmon,
+    DarkRed
+  );
 
-  @for $i from 1 through 4 {
-    .item#{$i} {
-      &.card:hover,
-      &.card:focus {
-        background: nth($colors, $i);
+@for $i from 1 through 5 {
+  .item#{$i} {
 
-      }
+    &.card:hover,
+    &.card:focus {
+      background: nth($colors, $i);
+
     }
   }
+}
 
-  .item1 {
-    grid-column: 3/5;
-    grid-row: 1/2;
-  }
+.item1 {
+  grid-column: 3/5;
+  grid-row: 1/2;
+}
 
-  .item2 {
-    grid-column: 5/6;
-    grid-row: 1/2;
-  }
+.item2 {
+  grid-column: 5/6;
+  grid-row: 1/2;
+}
 
-  .item3 {
-    grid-column: 3/4;
-    grid-row: 2/3;
-  }
+.item3 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
 
-  .item4 {
-    grid-column: 4/5;
-    grid-row: 2/3;
-  }
+.item4 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
 
-  .item5 {
-    grid-column: 5/6;
-    grid-row: 2/3;
-  }
+.item5 {
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
 
-  .item6 {
-    grid-column: 2/4;
-    grid-row: 3/4;
-  }
+.item6 {
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
 
-  .item7 {
-    grid-column: 4/5;
-    grid-row: 3/5;
-  }
+.item7 {
+  grid-column: 4/5;
+  grid-row: 3/5;
+}
 
-  .item8 {
-    grid-column: 5/6;
-    grid-row: 3/4;
-  }
+.item8 {
+  grid-column: 5/6;
+  grid-row: 3/4;
+}
 
-  .item9 {
-    grid-column: 5/6;
-    grid-row: 4/5;
-  }
+.item9 {
+  grid-column: 5/6;
+  grid-row: 4/5;
+}
 
-  .item10 {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
+.item10 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 2.75rem 0 1.05rem;
-    line-height: 1.2;
-    font-family: "Jost", sans-serif;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  line-height: 1.2;
+  font-family: "Jost", sans-serif;
+}
 
-  h1 {
-    margin-top: 0;
-    font-size: 3.052em;
-  }
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
 
-  h2 {
-    font-size: 1em;
-    margin: 0;
-  }
+h2 {
+  font-size: 1em;
+  margin: 0;
+}
 
-  p {
-    line-height: 1.3;
-  }
+p {
+  line-height: 1.3;
+}
 
 }
 
@@ -272,7 +254,7 @@
     }
 
     .item5 {
-      grid-column:5/6;
+      grid-column: 5/6;
       grid-row: 4/5;
     }
 
@@ -303,6 +285,7 @@
 
   }
 }
+
 @media only screen and (max-width: 1024px) {
   .grid {
     display: grid;
@@ -367,6 +350,7 @@
 
   }
 }
+
 @media only screen and (max-width: 768px) {
   .grid {
     display: grid;
@@ -431,6 +415,7 @@
 
   }
 }
+
 @media only screen and (max-width: 500px) {
   .grid {
     display: flex;
@@ -452,6 +437,4 @@
 
   }
 }
-
 </style>
-

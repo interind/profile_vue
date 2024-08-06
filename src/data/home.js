@@ -5,6 +5,12 @@ export default {
   city: 'Екатеринбург',
   graph: 'работа удаленно',
   work: 'Frontend developer',
+  titles: [
+    {title: 'г.Екатеринбург', icon: 'mdi-home'},
+    {title: 'формат работы удаленный', icon: 'mdi-invoice-clock'},
+    {title: '+79690229280(whatsApp, telegram)', icon: 'mdi-phone'},
+    {title: 'interind@yandex.ru', icon: 'mdi-at'}
+  ],
   technologies: {
     ["react16^"]: [
       {icon: 'xml', text: 'Jsx'},
@@ -24,6 +30,7 @@ export default {
     ],
     javaScript: [
       {icon: 'nodejs', text: 'ES6'},
+      {icon: 'nodejs', text: 'JQuery'},
       {icon: 'npm', text: 'NodeJS'},
       {icon: 'code-json', text: 'Json'},
       {icon: 'eslint', text: 'Eslint'},
@@ -35,7 +42,7 @@ export default {
       {icon: 'sass', text: 'Sass'}
     ],
     git: [
-      {icon: 'git', text: 'GitHub'},
+      {icon: 'git', text: 'GitHub', href: 'https://github.com/interind'},
       {icon: 'git', text: 'GitLab'}
     ]
   }
