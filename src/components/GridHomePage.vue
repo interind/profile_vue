@@ -1,12 +1,12 @@
 <template>
-  <section class="col">
+  <section class="d-flex flex-column ga-5">
     <div class="item">
       <h1
         :class="[
           'item__title',
           {
-            'text-h3': $vuetify.display.mobile,
-            'text-h1': !$vuetify.display.mobile,
+            'text-h3': isMobile,
+            'text-h1': !isMobile,
           },
         ]"
       >
@@ -18,16 +18,16 @@
           {{ work }}
         </span>
       </h1>
-      <div :class="{'d-flex flex-wrap align-self-stretch': $vuetify.display.mobile }">
+      <div :class="['d-flex', {'flex-column align-self-stretch': isMobile }]">
         <v-card
-          class="flex-1-1-100"
-          :max-width="$vuetify.display.mobile ? '100%' : 300"
+          :class="['flex-1-1-100', [{'mr-m-20': isMobile }]]"
+          :max-width="isMobile ? '100%' : 300"
           rounded="0"
           >
           <v-avatar
             color="grey"
             rounded="0"
-            :size="$vuetify.display.mobile ? '100%' : 300"
+            :size="isMobile ? '100%' : 300"
           >
             <v-img :src="profile" cover />
           </v-avatar>
@@ -42,6 +42,9 @@
           ></v-list-item>
         </v-list>
       </div>
+    </div>
+    <div class="align-self-stretch" :style="{maxWidth: '790px'}">
+      <v-divider><h2>Технологии</h2></v-divider>
     </div>
     <div class="d-flex flex-wrap ga-5">
       <div
@@ -75,19 +78,30 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import info from "../data/home";
 import profile from "@/assets/img/profile.jpg";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+
+const  { width } = useDisplay();
+
+const isMobile = computed(() => width.value <= 720);
 </script>
 
 <style lang="scss" scoped>
+.mr-m-20 {
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+  min-width: calc(100% + 40px);
+  align-self: stretch;
+}
 .item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 28px;
   &__title {
     display: inline-block;
-    padding: 0 20px;
     font-size: 3.052em;
     span {
       display: inline-block;
