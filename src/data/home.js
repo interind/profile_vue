@@ -6,48 +6,51 @@ export default {
   graph: 'работа удаленно',
   work: 'Frontend developer',
   titles: [
-    {title: 'Александр Банных', icon: 'mdi-account'},
-    {title: 'г.Екатеринбург', icon: 'mdi-home'},
-    {title: 'формат работы удаленный', icon: 'mdi-invoice-clock'},
-    {title: '+79690229280(whatsApp, telegram)', icon: 'mdi-phone'},
-    {title: 'interind@yandex.ru', icon: 'mdi-at'}
+    {title: 'Александр Банных', icon: 'mdi-account', link: ''},
+    {title: 'г.Екатеринбург', icon: 'mdi-home', link: ''},
+    {title: '+79690229280', icon: 'mdi-phone', link: 'tel:+79690229280'},
+    {title: 'whatsApp', icon: 'mdi-whatsapp', link: 'whatsapp://send?phone=+79690229280'},
+    {title: 'telegram', icon: 'mdi-send-circle-outline', link: 'https://t.me/interind66'},
+    {title: 'interind@yandex.ru', icon: 'mdi-at', link: 'mailto:interind@yandex.ru'}
   ],
   technologies: {
     ["react16^"]: [
-      {icon: 'xml', text: 'Jsx'},
-      {icon: 'hook', text: 'Hook'},
-      {icon: 'hook', text: 'React Hook Form'},
-      {icon: 'router', text: 'React Router'},
-      {icon: 'eslint', text: 'Eslint'},
-      {icon: 'codepen', text: 'Mui'},
-      {icon: 'codepen', text: 'Antd'},
-      {icon: 'state-machine', text: 'MobX'},
-      {icon: 'state-machine', text: 'Redux'}
+      {link: 'https://ru.react.dev/learn/writing-markup-with-jsx', icon: 'xml', text: 'Jsx'},
+      {link: 'https://ru.react.dev/reference/rules/rules-of-hooks', icon: 'hook', text: 'Hook'},
+      {link: 'https://react-hook-form.com/', icon: 'hook', text: 'React Hook Form'},
+      {link: 'https://reactrouter.com/en/main', icon: 'router', text: 'React Router'},
+      {link: 'https://eslint.org/', icon: 'eslint', text: 'Eslint'},
+      {link: 'https://www.typescriptlang.org/', icon: 'eslint', text: 'TypeScript'},
+      {link: 'https://mui.com/', icon: 'codepen', text: 'Mui'},
+      {link: 'https://ant.design/', icon: 'codepen', text: 'Antd'},
+      {link: 'https://mobx.js.org/README.html', icon: 'state-machine', text: 'MobX'},
+      {link: 'http://redux.js.org/', icon: 'state-machine', text: 'Redux'}
     ],
     vue3: [
-      {icon: 'api', text: 'Option API'},
-      {icon: 'api', text: 'Composition API'},
-      {icon: 'router', text: 'Vue Router'},
-      {icon: 'eslint', text: 'Eslint'},
-      {icon: 'codepen', text: 'Vuetify'},
-      {icon: 'state-machine', text: 'VueX'}
+      {link: 'https://vuejs.org/api/options-state.html', icon: 'api', text: 'Option API'},
+      {link: 'https://vuejs.org/api/composition-api-setup.html#composition-api-setup', icon: 'api', text: 'Composition API'},
+      {link: 'https://v3.router.vuejs.org/ru/', icon: 'router', text: 'Vue Router'},
+      {link: 'https://eslint.org/', icon: 'eslint', text: 'Eslint'},
+      {link: 'https://www.typescriptlang.org/', icon: 'eslint', text: 'TypeScript'},
+      {link: 'https://vuetifyjs.com/en/', icon: 'codepen', text: 'Vuetify'},
+      {link: 'https://vuex.vuejs.org/', icon: 'state-machine', text: 'VueX'}
     ],
     javaScript: [
-      {icon: 'nodejs', text: 'ES6'},
-      {icon: 'nodejs', text: 'JQuery'},
-      {icon: 'npm', text: 'NodeJS'},
-      {icon: 'code-json', text: 'Json'},
-      {icon: 'eslint', text: 'Eslint'},
-      {icon: 'eslint', text: 'TypeScript'},
-      {icon: 'state-machine', text: 'Redux'}
+      {link: 'https://www.ecma-international.org/publications-and-standards/standards/', icon: 'nodejs', text: 'ES6'},
+      {link: 'https://jquery.com/', icon: 'nodejs', text: 'JQuery'},
+      {link: 'https://nodejs.org/en', icon: 'npm', text: 'NodeJS'},
+      {link: 'https://json.org/', icon: 'code-json', text: 'Json'},
+      {link: 'https://eslint.org/', icon: 'eslint', text: 'Eslint'},
+      {link: 'https://www.typescriptlang.org/', icon: 'eslint', text: 'TypeScript'},
+      {link: 'http://redux.js.org/', icon: 'state-machine', text: 'Redux'}
     ],
     style: [
-      {icon: 'palette', text: 'Css3'},
-      {icon: 'sass', text: 'Sass'}
+      {link: 'https://w3.org/TR/CSS/#css', icon: 'palette', text: 'Css3'},
+      {link: 'https://sass-lang.com/', icon: 'sass', text: 'Sass'}
     ],
     git: [
-      {icon: 'git', text: 'GitHub', href: 'https://github.com/interind'},
-      {icon: 'git', text: 'GitLab'}
+      {link: 'https://github.com/interind', icon: 'git', text: 'GitHub'},
+      {link: 'https://about.gitlab.com/', icon: 'git', text: 'GitLab'}
     ]
   }
 };

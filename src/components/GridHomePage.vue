@@ -23,6 +23,7 @@
           :class="['flex-1-1-100', [{'mr-m-20': isMobile }]]"
           :max-width="isMobile ? '100%' : 300"
           rounded="0"
+          variant="text"
           >
           <v-avatar
             color="grey"
@@ -38,6 +39,8 @@
             :key="tile.title"
             :prependIcon="tile.icon"
             :title="tile.title"
+            :href="tile.link"
+            :disabled="!tile.link"
             @click="sheet = false"
           ></v-list-item>
         </v-list>
@@ -62,7 +65,8 @@
             :key="i"
             :value="item"
             color="primary"
-            :href="item.href"
+            :href="item.link"
+            :disabled="!item.link"
             target="__blank"
           >
             <template v-slot:prepend>
