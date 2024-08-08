@@ -18,18 +18,14 @@
           {{ work }}
         </span>
       </h1>
-      <div :class="['d-flex', {'flex-column align-self-stretch': isMobile }]">
+      <div :class="['d-flex', { 'flex-column align-self-stretch': isMobile }]">
         <v-card
-          :class="['flex-1-1-100', [{'mr-m-20': isMobile }]]"
+          :class="['flex-1-1-100', [{ 'mr-m-20': isMobile }]]"
           :max-width="isMobile ? '100%' : 300"
           rounded="0"
           variant="text"
-          >
-          <v-avatar
-            color="grey"
-            rounded="0"
-            :size="isMobile ? '100%' : 300"
-          >
+        >
+          <v-avatar color="grey" rounded="0" :size="isMobile ? '100%' : 300">
             <v-img :src="profile" cover />
           </v-avatar>
         </v-card>
@@ -46,7 +42,7 @@
         </v-list>
       </div>
     </div>
-    <div class="align-self-stretch" :style="{maxWidth: '790px'}">
+    <div class="align-self-stretch" :style="{ maxWidth: '790px' }">
       <v-divider><h2>Технологии</h2></v-divider>
     </div>
     <div class="d-flex flex-wrap ga-5">
@@ -87,7 +83,7 @@ import info from "../data/home";
 import profile from "@/assets/img/profile.jpg";
 import { useDisplay } from "vuetify/lib/framework.mjs";
 
-const  { width } = useDisplay();
+const { width } = useDisplay();
 
 const isMobile = computed(() => width.value <= 720);
 </script>
