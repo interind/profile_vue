@@ -1,5 +1,7 @@
 <template>
-  <v-btn v-show="is" position="fixed" location="bottom right" icon="mdi-arrow-up" @click="clickUp" :style="{ right: '20px', bottom: '20px', opacity: 0.5 }"/>
+  <v-btn v-show="is" class="back" position="fixed" prepend-icon="mdi-arrow-up" @click="clickUp">
+    Вверх
+  </v-btn>
 </template>
 
 <script setup>
@@ -21,3 +23,12 @@ const clickUp = () => goTo(0, animateScroll);
 const is = computed(() => !!props?.isShow);
 
 </script>
+
+<style lang="scss" scoped>
+  .back {
+    right: 50%;
+    bottom: 10px;
+    opacity: 0.5;
+    translate: 50% 0;
+  }
+</style>
