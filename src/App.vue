@@ -13,7 +13,7 @@ import { ref } from "vue";
 import GridHomePage from "@/components/GridHomePage.vue";
 import ToBackButton from "@/components/ToBackButton.vue";
 
-const offsetTop = ref(0);
+const offsetTop = ref(false);
 function onScroll(e) {
   offsetTop.value = e.target?.scrollingElement?.scrollTop >= 100;
 }
