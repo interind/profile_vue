@@ -1,8 +1,8 @@
 export default {
   lastName: 'Александр',
   firstName: 'Банных',
-  age: 40,
-  city: 'Екатеринбург',
+  age: 42,
+  city: 'Москва/Екатеринбург',
   graph: 'работа удаленно',
   work: 'Frontend developer',
   titles: [
@@ -14,7 +14,8 @@ export default {
     { title: 'interind@yandex.ru', icon: 'mdi-at', link: 'mailto:interind@yandex.ru' }
   ],
   technologies: {
-    ["react16^"]: [
+    ["react"]: [
+      { link: 'https://nextjs.org/', icon: 'xml', text: 'Next' },
       { link: 'https://ru.react.dev/learn/writing-markup-with-jsx', icon: 'xml', text: 'Jsx' },
       { link: 'https://ru.react.dev/reference/rules/rules-of-hooks', icon: 'hook', text: 'Hook' },
       { link: 'https://react-hook-form.com/', icon: 'hook', text: 'React Hook Form' },
@@ -25,6 +26,9 @@ export default {
       { link: 'https://ant.design/', icon: 'codepen', text: 'Antd' },
       { link: 'https://mobx.js.org/README.html', icon: 'state-machine', text: 'MobX' },
       { link: 'http://redux.js.org/', icon: 'state-machine', text: 'Redux' }
+    ],
+    back: [
+      { link: 'https://nestjs.com/', icon: 'api', text: 'nestjs' }
     ],
     vue3: [
       { link: 'https://vuejs.org/api/options-state.html', icon: 'api', text: 'Option API' },
