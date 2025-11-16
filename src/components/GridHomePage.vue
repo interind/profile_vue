@@ -25,7 +25,7 @@
           rounded="0"
           variant="text"
         >
-          <v-avatar color="grey" rounded="0" :size="isMobile ? '100%' : 300">
+          <v-avatar class="img-br" color="grey" rounded="0" :size="isMobile ? '100%' : 300">
             <v-img :src="profile" cover />
           </v-avatar>
         </v-card>
@@ -94,6 +94,10 @@ const isMobile = computed(() => width.value <= 720);
   width: calc(100% + 40px);
   min-width: calc(100% + 40px);
   align-self: stretch;
+}
+.img-br {
+  border-radius: 10px !important;
+  opacity: .5;
 }
 .item {
   display: flex;
