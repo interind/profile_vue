@@ -1,0 +1,7 @@
+/* src/assets/tailwind.css
+ * Глобальные утилиты Tailwind. Импортируется в src/main.js.
+ * preflight отключён в tailwind.config.js, поэтому утилиты не конфликтуют с Vuetify.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

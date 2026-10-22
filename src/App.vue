@@ -1,24 +1,31 @@
+<script setup>
+// App.vue — точка входа. Показываем новую страницу резюме ResumePage.vue.
+// Старые GridHomePage/ToBackButton сохранены в src/components (не удалены),
+// чтобы при желании можно было вернуть прежний вид.
+import ResumePage from "@/views/ResumePage.vue";
+</script>
+
 <template>
   <v-layout v-scroll="onScroll">
-    <div id="goto-container-example"></div>
     <v-main>
-      <grid-home-page />
-      <to-back-button :is-show="offsetTop" />
+      <ResumePage />
     </v-main>
   </v-layout>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import GridHomePage from "@/components/GridHomePage.vue";
-import ToBackButton from "@/components/ToBackButton.vue";
-
-const offsetTop = ref(false);
-function onScroll(e) {
-  offsetTop.value = e.target?.scrollingElement?.scrollTop >= 100;
-}
+<script>
+// Хук прокрутки оставлен для обратной совместимости (использовался ToBackButton).
+export default {
+  data() {
+    return { offsetTop: false };
+  },
+  methods: {
+    onScroll(e) {
+      this.offsetTop = e.target?.scrollingElement?.scrollTop >= 100;
+    },
+  },
+};
 </script>
-
 
 <style lang="scss">
 html {
@@ -26,32 +33,12 @@ html {
 }
 .body {
   min-height: 100%;
-  background: rgb(255, 255, 255);
-  background: -moz-linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 1) 25%,
-    rgb(27, 141, 194) 53%,
-    rgba(255, 46, 0, 1) 80%
-  );
-  background: -webkit-linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 1) 25%,
-    rgba(27, 141, 194) 53%,
-    rgba(255, 46, 0, 1) 80%
-  );
-  background: linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 1) 25%,
-    rgba(27, 141, 194) 53%,
-    rgba(255, 46, 0, 1) 80%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ff2e00",GradientType=1);
-  background-repeat: no-repeat;
+  background: #ffffff; /* нейтральный фон вместо градиента */
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
+  padding: 0; /* убрали паддинг 20px — контейнер внутри ResumePage */
 }
 </style>
